@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Game } from 'src/models/game';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
+import { Firestore, collectionData, collection, setDoc, doc, addDoc } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-game',
@@ -13,7 +15,14 @@ export class GameComponent implements OnInit {
   currentCard: string = '';
   game: Game = new Game();
 
-  constructor(public dialog: MatDialog) { }
+  game$: Observable<any>;
+  gameBackend:Array<any> = [];
+  firestore: Firestore = inject(Firestore);
+
+  constructor(public dialog: MatDialog) {
+    const itemCollection = collection(this.firestore, 'games');
+    this.game$ = collectionData(itemCollection);
+  }
 
   ngOnInit(): void {
     this.newGame();
@@ -21,6 +30,15 @@ export class GameComponent implements OnInit {
 
   newGame() {
     this.game = new Game();
+
+    this.game$.subscribe((gameNewItem) => {
+      this.gameBackend = gameNewItem;
+      console.log('Ergenisse', this.gameBackend);
+    })
+
+    const itemCollection = collection(this.firestore, 'games');
+    //let gameInfo = addDoc(itemCollection, {game: this.game.toJSON()});
+    //console.log(gameInfo);
   }
 
   takeCard() {
