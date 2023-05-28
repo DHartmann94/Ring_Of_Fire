@@ -1,0 +1,11 @@
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 100%;
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(1.5);
+    }
+}

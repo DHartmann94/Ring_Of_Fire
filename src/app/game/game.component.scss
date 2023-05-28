@@ -81,6 +81,11 @@
 
     app-player-mobile {
         margin-left: 8px;
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(1.1);
+        }
     }
 }
 
@@ -97,6 +102,11 @@
 
     app-player {
         margin-top: 16px;
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(1.1);
+        }
     }
 }
 

@@ -10,6 +10,10 @@
     span {
         text-align: center;
         font-size: 14px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
     }
 
     img {

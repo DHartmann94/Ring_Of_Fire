@@ -9,6 +9,10 @@
     span {
         margin-left: 16px;
         font-size: 32px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
     }
 
     img {
