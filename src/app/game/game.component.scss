@@ -57,12 +57,6 @@
     }
 }
 
-.player-position {
-    position: absolute;
-    right: 0;
-    z-index: 1;
-}
-
 .btn-add {
     position: absolute;
     right: 32px;
@@ -74,4 +68,46 @@
     right: 100px;
     bottom: 32px;
     left: 100px;
+}
+
+.scroll-container-mobile {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    app-player-mobile {
+        margin-left: 8px;
+    }
+}
+
+.scroll-container-desktop {
+    position: absolute;
+    top: 16px;
+    right: 0px;
+    max-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+
+    app-player {
+        margin-top: 16px;
+    }
+}
+
+@media(max-width: 720px) {
+    .pin-bottom {
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+    }
+
+    .btn-add {
+        bottom: 108px;
+    }
 }

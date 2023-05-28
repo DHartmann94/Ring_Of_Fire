@@ -19,4 +19,21 @@
             cursor: pointer;
         }
     }
+
+    h1 {
+        font-size: 72px;
+        color: rgb(235,184,50);
+        padding-top: 75px;
+        padding-left: 75px;
+        line-height: 75px;
+    }
+}
+
+@media(max-width: 960px) {
+    .start-screen {
+
+        img {
+            width: 60vw;
+        }
+    }
 }
