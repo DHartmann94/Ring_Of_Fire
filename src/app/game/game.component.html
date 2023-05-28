@@ -17,12 +17,12 @@ class="player-position">
         <img *ngFor="let card of game.playedCards" class="played-card" src="assets/img/card/{{ card }}.png"
             alt="Played-Card">
         <!-- Current card (animation) -->
-        <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pick-card"
-            src="assets/img/card/{{ currentCard }}.png" alt="Card">
+        <img (click)="takeCard()" *ngIf="game.pickCardAnimation" class="pick-card"
+            src="assets/img/card/{{ game.currentCard }}.png" alt="Card">
     </div>
 </div>
 
-<app-game-info [card]="currentCard" class="pin-bottom"></app-game-info>
+<app-game-info [card]="game.currentCard" class="pin-bottom"></app-game-info>
 
 <button (click)="openDialog()" mat-fab color="primary" class="btn-add">
     <mat-icon>add</mat-icon>
