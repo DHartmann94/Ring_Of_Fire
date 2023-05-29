@@ -110,6 +110,22 @@
     }
 }
 
+.game-over {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 700px;
+        object-fit: contain;
+    }
+}
+
+.preload-image {
+    display: none;
+}
+
 @media(max-width: 720px) {
     .pin-bottom {
         right: 0px;
@@ -119,5 +135,12 @@
 
     .btn-add {
         bottom: 108px;
+    }
+
+    .game-over {
+    
+        img {
+            width: 250px;
+        }
     }
 }

@@ -18,8 +18,14 @@
     </app-player-mobile>
 </div>
 
+<img *ngIf="!game.gameOver" class="preload-image" src="assets/img/card/{{ game.stack[game.stack.length -1] }}.png" alt="Card">
+
 <div class="game-field">
-    <div class="card-stack">
+    <div *ngIf="game.gameOver" class="game-over">
+        <img src="assets/img/game_over.png" alt="Game-Over">
+        <button (click)="restartGame()" mat-fab extended color="primary">Restart</button>
+    </div>
+    <div *ngIf="!game.gameOver" class="card-stack">
         <!-- Stack of cards -->
         <img *ngFor="let c of [0,1,2,3]" [ngStyle]="{'right.px': c * 5}" src="assets/img/card/card_cover.png"
             alt="Card-Cover">
@@ -34,8 +40,8 @@
     </div>
 </div>
 
-<app-game-info [card]="game.currentCard" class="pin-bottom"></app-game-info>
+<app-game-info *ngIf="!game.gameOver" [card]="game.currentCard" class="pin-bottom"></app-game-info>
 
-<button (click)="openDialog()" mat-fab color="primary" class="btn-add">
+<button *ngIf="!game.gameOver" (click)="openDialog()" mat-fab color="primary" class="btn-add">
     <mat-icon>add</mat-icon>
 </button>

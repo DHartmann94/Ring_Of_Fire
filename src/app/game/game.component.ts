@@ -1,4 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { Game } from 'src/models/game';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
@@ -17,7 +18,7 @@ export class GameComponent implements OnInit {
   gameId: string = '';
 
 
-  constructor(private route: ActivatedRoute, public dialog: MatDialog, private firestore: Firestore) {
+  constructor(private route: ActivatedRoute, private router: Router, public dialog: MatDialog, private firestore: Firestore) {
 
   }
 
@@ -101,6 +102,10 @@ export class GameComponent implements OnInit {
         this.saveGame();
       }
     });
+  }
+
+  async restartGame() {
+    this.router.navigateByUrl('');
   }
 
   /**
