@@ -110,7 +110,7 @@ export class GameComponent implements OnInit {
 
   /**
    * Opens a dialog to change the profile picture or delete a player.
-   * @param playerId - The ID of the "game.players" array.
+   * @param playerId - The Index of the players of the "game.players" array.
    */
   editPlayer(playerId: number) {
     const dialogRef = this.dialog.open(PlayerEditComponent); //Where to open the dialog container
