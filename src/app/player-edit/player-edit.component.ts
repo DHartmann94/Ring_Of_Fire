@@ -13,11 +13,10 @@ export class PlayerEditComponent {
   constructor(public dialogRef: MatDialogRef<PlayerEditComponent>) {
   }
 
-    /**
+  /**
    * Close the "Dialog Add Player" pop-up window.
    */
-    onNoClick(): void {
-      this.dialogRef.close();
-    }
-
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }

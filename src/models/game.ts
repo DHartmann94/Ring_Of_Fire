@@ -19,6 +19,10 @@ export class Game {
         shuffle(this.stack);
     }
 
+    /**
+     * Converts the Game object to a JSON representation.
+     * @returns {Object} - The JSON object representing the Game.
+     */
     public toJSON() {
         return {
             players: this.players,
@@ -33,6 +37,11 @@ export class Game {
     }
 }
 
+/**
+ * Shuffles the elements in the given array.
+ * @param array - The array to be shuffled (game.stack).
+ * @returns {Array} - The shuffled array.
+ */
 function shuffle(array: any) {
     let currentIndex = array.length, randomIndex;
 

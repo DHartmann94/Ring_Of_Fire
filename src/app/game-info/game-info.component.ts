@@ -30,6 +30,11 @@ export class GameInfoComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
 
+  /**
+   * If the 'card' property is truthy, it extracts the card number from the string representation.
+   * Uses the card number to retrieve the corresponding title and description from the 'cardAction' array.
+   * Updates the 'title' and 'description' properties accordingly and displayed it on the game-info card.
+   */
   ngOnChanges(): void {
     if (this.card) {
       let cardNumber = +this.card.split('_')[1]; // The number from the png.

@@ -14,7 +14,6 @@ import { PlayerEditComponent } from '../player-edit/player-edit.component';
 })
 export class GameComponent implements OnInit {
   game: Game = new Game();
-
   gameId: string = '';
 
 
@@ -32,6 +31,10 @@ export class GameComponent implements OnInit {
     this.game = new Game();
   }
 
+  /**
+   * Loads game data from the database based on the provided game ID.
+   * The Firebasee ID was specified in the URL.
+   */
   loadGameDataFromDatabase() {
     this.route.params.subscribe((params) => {
       this.gameId = params['id'];
@@ -51,6 +54,12 @@ export class GameComponent implements OnInit {
     })
   }
 
+  /**
+   * Takes a card from the game stack and processes the card-taking action.
+   * If there are no players, it displays an alert to create a player.
+   * If the stack is empty, it sets the game over flag and saves the game.
+   * If the pickCardAnimation is not active and there are players, it processes the card-taking.
+   */
   takeCard() {
     if (this.game.players.length == 0) {
       alert('Please create a Player!');
@@ -62,6 +71,14 @@ export class GameComponent implements OnInit {
     }
   }
 
+  /**
+   * Processes the card-taking action.
+   * It pops the last card from the game stack and assigns it as the current card.
+   * Sets the pickCardAnimation flag to true.
+   * Updates the current player and saves the game.
+   * After a delay of 1 second, pushes the current card to the played cards array,
+   * Sets the pickCardAnimation flag to false, and saves the game again.
+   */
   processTakeCard() {
     this.game.currentCard = this.game.stack.pop()!; // pop gives the last value from the array and delete it
     this.game.pickCardAnimation = true;
@@ -76,6 +93,9 @@ export class GameComponent implements OnInit {
     }, 1000);
   }
 
+  /**
+   * Opens a dialog to add a player to the game. 
+   */
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent); //Where to open the dialog container
 
@@ -88,6 +108,10 @@ export class GameComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens a dialog to change the profile picture or delete a player.
+   * @param playerId - The ID of the "game.players" array.
+   */
   editPlayer(playerId: number) {
     const dialogRef = this.dialog.open(PlayerEditComponent); //Where to open the dialog container
 
@@ -104,12 +128,12 @@ export class GameComponent implements OnInit {
     });
   }
 
-  async restartGame() {
+  restartGame() {
     this.router.navigateByUrl('');
   }
 
   /**
-   * Saves the changes in the backend
+   * Saves the changes in the backend.
    */
   async saveGame() {
     const itemCollection = collection(this.firestore, 'games');
