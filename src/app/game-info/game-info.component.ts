@@ -15,9 +15,9 @@ export class GameInfoComponent implements OnInit, OnChanges {
     { title: 'Chicks', description: 'All girls drink.' },
     { title: 'Heaven', description: 'Put your hands up! The last player drinks!' },
     { title: 'Mate', description: 'Pick a mate. Your mate must always drink when you drink and the other way around.' },
-    { title: 'Thumbmaster', description: '' },
+    { title: 'Thumbmaster', description: 'The player who drew the card must put their thumb on the table at a chosen time (before the next five gets picked though, or they lose the right). The last person to put their thumb on the table must drink. In Perfect Match, Francesca says five is jive, where the player has to do a dance move, which is a fun variation too.' },
     { title: 'Men', description: 'All men drink.' },
-    { title: 'Quizmaster', description: '' },
+    { title: 'Quizmaster', description: 'The player who drew the card must pour some of their drink into the cup in the middle. The person to draw the last King has to drink whatever is in the cup in the middle.' },
     { title: 'Never have i ever...', description: 'Say something you nnever did. Everyone who did it has to drink.' },
     { title: 'Rule', description: 'Make a rule. Everyone needs to drink when he breaks the rule.' },
   ];

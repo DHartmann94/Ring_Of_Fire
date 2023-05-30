@@ -62,7 +62,7 @@ export class GameComponent implements OnInit {
    */
   takeCard() {
     if (this.game.players.length == 0) {
-      alert('Please create a Player!');
+      this.openDialog();
     } else if (this.game.stack.length == 0) {
       this.game.gameOver = true;
       this.saveGame();
