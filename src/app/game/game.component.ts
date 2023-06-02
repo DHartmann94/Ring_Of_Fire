@@ -97,7 +97,7 @@ export class GameComponent implements OnInit {
    * Opens a dialog to add a player to the game. 
    */
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogAddPlayerComponent); //Where to open the dialog container
+    const dialogRef = this.dialog.open(DialogAddPlayerComponent); // Where the container should be opened.
 
     dialogRef.afterClosed().subscribe((name: string) => {
       if (name && name.length > 0) {
@@ -113,7 +113,7 @@ export class GameComponent implements OnInit {
    * @param playerId - The Index of the players of the "game.players" array.
    */
   editPlayer(playerId: number) {
-    const dialogRef = this.dialog.open(PlayerEditComponent); //Where to open the dialog container
+    const dialogRef = this.dialog.open(PlayerEditComponent); //Where the container should be opened.
 
     dialogRef.afterClosed().subscribe((change: string) => {
       if (change) {

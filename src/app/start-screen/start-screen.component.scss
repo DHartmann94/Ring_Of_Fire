@@ -24,7 +24,7 @@
         font-size: 95px;
         font-weight: 600;
         color: #fdfdfe;
-        text-shadow: 0px 0px 5px #1f0000, 0px 0px 10px #1f0000, 0px 0px 10px #1f0000, 0px 0px 20px #1f0000;
+        text-shadow: 0px 0px 5px #8a0000, 0px 0px 10px #8a0000, 0px 0px 10px #8a0000, 0px 0px 20px #8a0000;
         padding-top: 75px;
         padding-left: 75px;
         line-height: 75px;
@@ -38,9 +38,9 @@
     align-items: center;
     justify-content: center;
     background-size: 300% 300%;
-    background-image: linear-gradient(-45deg, yellow 0%, yellow 25%, yellow 51%, #ff357f 100%);
-    animation: AnimateBG 20s ease infinite;
-    animation: AnimateBG 20s ease infinite;
+    background-image: linear-gradient(-45deg, black 0%, black 25%, rgb(83, 60, 60) 51%, white 100%);
+    animation: AnimateBG 15s ease infinite;
+    animation: AnimateBG 15s ease infinite;
   }
   
   @keyframes AnimateBG {
